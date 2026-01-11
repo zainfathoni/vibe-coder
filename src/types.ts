@@ -1,5 +1,11 @@
 export type SkillLevel = 'beginner' | 'intermediate' | 'advanced'
 
+export interface WireframeScreen {
+  name: string
+  description: string
+  ascii: string
+}
+
 export interface Idea {
   id: string
   title: string
@@ -10,4 +16,5 @@ export interface Idea {
   stack: string[]
   features: string[]
   learningGoals: string[]
+  wireframes: WireframeScreen[]
 }

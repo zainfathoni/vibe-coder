@@ -71,6 +71,27 @@ export function IdeaDetailPage() {
           </ul>
         </div>
 
+        {idea.wireframes && idea.wireframes.length > 0 && (
+          <div className="border-t border-gray-200 pt-4 mb-6">
+            <h2 className="font-semibold text-gray-900 mb-4">Wireframes</h2>
+            <div className="space-y-6">
+              {idea.wireframes.map((wireframe, i) => (
+                <div key={i} className="bg-gray-50 rounded-lg p-4">
+                  <h3 className="font-medium text-gray-900 mb-1">
+                    {wireframe.name}
+                  </h3>
+                  <p className="text-sm text-gray-600 mb-3">
+                    {wireframe.description}
+                  </p>
+                  <pre className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto text-xs font-mono leading-tight">
+                    {wireframe.ascii}
+                  </pre>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
         <div className="border-t border-gray-200 pt-4 flex gap-3">
           <button
             onClick={() => toggle(idea.id)}
