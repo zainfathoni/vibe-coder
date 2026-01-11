@@ -1,6 +1,7 @@
 import { Link, useParams, useNavigate } from 'react-router-dom'
 import { getIdeaById } from '../data/ideas'
 import { useSavedIdeas } from '../hooks/useSavedIdeas'
+import { ShareButton } from '../components/ShareButton'
 
 export function IdeaDetailPage() {
   const { id } = useParams<{ id: string }>()
@@ -117,6 +118,7 @@ export function IdeaDetailPage() {
           >
             {saved ? '♥ Saved' : '♡ Save Idea'}
           </button>
+          <ShareButton ideaId={idea.id} ideaTitle={idea.title} />
           <button
             onClick={() => navigate(-1)}
             className="font-retro text-xl px-4 py-2 bg-retro-purple text-white border-4 border-retro-dark shadow-retro hover:translate-x-1 hover:-translate-y-1 hover:shadow-retro-lg transition-all"
