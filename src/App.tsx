@@ -4,6 +4,7 @@ import { HomePage } from './pages/HomePage'
 import { IdeasPage } from './pages/IdeasPage'
 import { IdeaDetailPage } from './pages/IdeaDetailPage'
 import { SavedPage } from './pages/SavedPage'
+import { SubmitIdeaPage } from './pages/SubmitIdeaPage'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Route path="/ideas" element={<IdeasPage />} />
             <Route path="/ideas/:id" element={<IdeaDetailPage />} />
             <Route path="/saved" element={<SavedPage />} />
+            <Route path="/submit" element={<SubmitIdeaPage />} />
           </Routes>
         </main>
       </div>

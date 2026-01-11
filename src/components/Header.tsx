@@ -15,6 +15,12 @@ export function Header() {
         <div className="flex items-center gap-4">
           <ThemeToggle />
           <Link
+            to="/submit"
+            className="text-white dark:text-retro-green hover:text-retro-yellow transition-colors font-retro text-xl"
+          >
+            + Submit
+          </Link>
+          <Link
             to="/saved"
             className="flex items-center gap-2 text-white dark:text-retro-green hover:text-retro-yellow transition-colors font-retro text-xl"
           >

@@ -1,0 +1,106 @@
+name: Community Idea
+description: Submit a project idea for the Vibe Coder community
+title: "[Idea] "
+labels: ["community-idea"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for submitting a project idea! Fill out the form below to share your idea with the community.
+
+  - type: input
+    id: title
+    attributes:
+      label: Project Title
+      description: A catchy name for your project idea
+      placeholder: e.g., Retro Snake Game
+    validations:
+      required: true
+
+  - type: textarea
+    id: short-description
+    attributes:
+      label: Short Description
+      description: A one-liner about the project
+      placeholder: Build a classic snake game with pixel art graphics
+    validations:
+      required: true
+
+  - type: textarea
+    id: full-description
+    attributes:
+      label: Full Description
+      description: Describe the project in more detail
+      placeholder: |
+        A nostalgic take on the classic Snake game featuring...
+    validations:
+      required: false
+
+  - type: dropdown
+    id: difficulty
+    attributes:
+      label: Difficulty
+      description: What skill level is this project best suited for?
+      options:
+        - beginner
+        - intermediate
+        - advanced
+    validations:
+      required: true
+
+  - type: dropdown
+    id: time-estimate
+    attributes:
+      label: Time Estimate
+      description: How long would this project take to build?
+      options:
+        - 30 minutes
+        - 1-2 hours
+        - 2-4 hours
+        - 4-8 hours
+        - 1-2 days
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: tech-stack
+    attributes:
+      label: Tech Stack
+      description: What technologies would be used?
+      options:
+        - label: HTML/CSS
+        - label: JavaScript
+        - label: TypeScript
+        - label: React
+        - label: Vue
+        - label: Svelte
+        - label: Next.js
+        - label: Node.js
+        - label: Python
+        - label: Go
+        - label: Rust
+        - label: Other
+
+  - type: textarea
+    id: features
+    attributes:
+      label: Features to Build
+      description: List the main features (one per line)
+      placeholder: |
+        - User can control the snake with arrow keys
+        - Score tracking and high score storage
+        - Increasing difficulty as the snake grows
+    validations:
+      required: false
+
+  - type: textarea
+    id: learning-goals
+    attributes:
+      label: Learning Goals
+      description: What would someone learn by building this? (one per line)
+      placeholder: |
+        - Game loop and animation basics
+        - State management for game entities
+        - Collision detection algorithms
+    validations:
+      required: false
