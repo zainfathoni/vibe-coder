@@ -22,18 +22,18 @@ export function IdeasPage() {
   return (
     <div>
       <div className="mb-6">
-        <Link to="/" className="text-gray-500 hover:text-gray-700 text-sm">
+        <Link to="/" className="font-retro text-xl text-retro-purple hover:text-retro-pink transition-colors">
           ← Back
         </Link>
       </div>
 
       <div className="text-center mb-6">
-        <h1 className="text-xl font-semibold text-gray-900 mb-3">
+        <h1 className="font-pixel text-lg text-retro-dark mb-4 drop-shadow-[2px_2px_0px_rgba(155,93,229,0.5)]">
           Ideas for {levelLabel}
         </h1>
         <button
           onClick={handleRegenerate}
-          className="text-sm text-gray-600 hover:text-gray-900 border border-gray-200 px-3 py-1.5 rounded-lg hover:border-gray-300 transition-colors"
+          className="font-retro text-xl text-retro-dark bg-retro-yellow border-4 border-retro-dark px-4 py-2 shadow-retro hover:translate-x-1 hover:-translate-y-1 hover:shadow-retro-lg transition-all"
         >
           🔄 Regenerate
         </button>
@@ -46,9 +46,11 @@ export function IdeasPage() {
       </div>
 
       {ideas.length === 0 && (
-        <p className="text-center text-gray-500 py-8">
-          No ideas found for this level.
-        </p>
+        <div className="text-center py-12 border-4 border-retro-dark bg-white shadow-retro">
+          <p className="font-retro text-2xl text-retro-navy">
+            No ideas found for this level.
+          </p>
+        </div>
       )}
     </div>
   )

@@ -6,19 +6,19 @@ export function Header() {
   const savedCount = savedIds.length
 
   return (
-    <header className="border-b border-gray-200">
+    <header className="border-b-4 border-retro-dark bg-retro-purple">
       <div className="container mx-auto px-4 py-4 max-w-3xl flex justify-between items-center">
-        <Link to="/" className="text-lg font-semibold text-gray-900 hover:text-gray-700">
+        <Link to="/" className="font-pixel text-sm text-white hover:text-retro-yellow transition-colors drop-shadow-[2px_2px_0px_rgba(0,0,0,1)]">
           Vibe Coder
         </Link>
         <Link
           to="/saved"
-          className="flex items-center gap-1.5 text-gray-600 hover:text-gray-900"
+          className="flex items-center gap-2 text-white hover:text-retro-yellow transition-colors font-retro text-xl"
         >
-          <span>♡</span>
+          <span className="text-retro-pink">♥</span>
           <span>Saved</span>
           {savedCount > 0 && (
-            <span className="bg-gray-900 text-white text-xs px-1.5 py-0.5 rounded-full">
+            <span className="bg-retro-yellow text-retro-dark text-xs px-2 py-0.5 border-2 border-retro-dark shadow-retro-sm font-pixel">
               {savedCount}
             </span>
           )}

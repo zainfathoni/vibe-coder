@@ -13,13 +13,16 @@ export function SavedPage() {
   return (
     <div>
       <div className="mb-6">
-        <Link to="/" className="text-gray-500 hover:text-gray-700 text-sm">
+        <Link to="/" className="font-retro text-xl text-retro-purple hover:text-retro-pink transition-colors">
           ← Back
         </Link>
       </div>
 
-      <h1 className="text-xl font-semibold text-gray-900 text-center mb-6">
-        Saved Ideas ({savedIdeas.length})
+      <h1 className="font-pixel text-lg text-retro-dark text-center mb-6 drop-shadow-[2px_2px_0px_rgba(155,93,229,0.5)]">
+        Saved Ideas
+        <span className="ml-2 bg-retro-pink text-white px-2 py-0.5 border-2 border-retro-dark text-xs">
+          {savedIdeas.length}
+        </span>
       </h1>
 
       {savedIdeas.length > 0 ? (
@@ -29,11 +32,11 @@ export function SavedPage() {
           ))}
         </div>
       ) : (
-        <div className="text-center py-12">
-          <p className="text-gray-500 mb-4">No saved ideas yet</p>
+        <div className="text-center py-12 border-4 border-retro-dark bg-white shadow-retro">
+          <p className="font-retro text-2xl text-retro-navy mb-4">No saved ideas yet</p>
           <Link
             to="/"
-            className="text-gray-900 underline hover:no-underline"
+            className="font-pixel text-xs text-retro-purple hover:text-retro-pink underline"
           >
             Browse ideas
           </Link>

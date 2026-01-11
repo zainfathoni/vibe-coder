@@ -2,10 +2,10 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import type { SkillLevel } from '../types'
 
-const skillLevels: { value: SkillLevel; label: string }[] = [
-  { value: 'beginner', label: 'Beginner' },
-  { value: 'intermediate', label: 'Intermediate' },
-  { value: 'advanced', label: 'Advanced' },
+const skillLevels: { value: SkillLevel; label: string; color: string }[] = [
+  { value: 'beginner', label: 'Beginner', color: 'bg-retro-green' },
+  { value: 'intermediate', label: 'Intermediate', color: 'bg-retro-yellow' },
+  { value: 'advanced', label: 'Advanced', color: 'bg-retro-orange' },
 ]
 
 export function HomePage() {
@@ -20,23 +20,25 @@ export function HomePage() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-[60vh] text-center">
-      <h1 className="text-3xl font-bold text-gray-900 mb-2">Vibe Coder</h1>
-      <p className="text-gray-600 mb-10">
+      <h1 className="font-pixel text-2xl text-retro-dark mb-4 drop-shadow-[3px_3px_0px_rgba(155,93,229,0.5)]">
+        Vibe Coder
+      </h1>
+      <p className="font-retro text-2xl text-retro-navy mb-10">
         Generate ideas for your next vibe coding session
       </p>
 
       <div className="w-full max-w-xs">
-        <p className="text-sm font-medium text-gray-700 mb-4">
+        <p className="font-pixel text-xs text-retro-dark mb-4">
           What's your skill level?
         </p>
-        <div className="space-y-2 mb-6">
-          {skillLevels.map(({ value, label }) => (
+        <div className="space-y-3 mb-6">
+          {skillLevels.map(({ value, label, color }) => (
             <label
               key={value}
-              className={`flex items-center gap-3 p-3 border rounded-lg cursor-pointer transition-colors ${
+              className={`flex items-center gap-3 p-3 border-4 border-retro-dark cursor-pointer transition-all font-retro text-xl ${
                 selectedLevel === value
-                  ? 'border-gray-900 bg-gray-50'
-                  : 'border-gray-200 hover:border-gray-300'
+                  ? `${color} shadow-retro`
+                  : 'bg-white hover:translate-x-1 hover:-translate-y-1 hover:shadow-retro'
               }`}
             >
               <input
@@ -45,9 +47,9 @@ export function HomePage() {
                 value={value}
                 checked={selectedLevel === value}
                 onChange={() => setSelectedLevel(value)}
-                className="w-4 h-4 text-gray-900"
+                className="w-5 h-5 accent-retro-purple"
               />
-              <span className="text-gray-900">{label}</span>
+              <span className="text-retro-dark">{label}</span>
             </label>
           ))}
         </div>
@@ -55,7 +57,7 @@ export function HomePage() {
         <button
           onClick={handleGenerate}
           disabled={!selectedLevel}
-          className="w-full py-3 px-4 bg-gray-900 text-white rounded-lg font-medium hover:bg-gray-800 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors"
+          className="w-full py-3 px-4 bg-retro-teal text-retro-dark border-4 border-retro-dark font-pixel text-xs shadow-retro hover:translate-x-1 hover:-translate-y-1 hover:shadow-retro-lg disabled:bg-gray-300 disabled:cursor-not-allowed disabled:shadow-none disabled:translate-x-0 disabled:translate-y-0 transition-all"
         >
           Generate Ideas →
         </button>
