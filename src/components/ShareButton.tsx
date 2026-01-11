@@ -44,7 +44,7 @@ export function ShareButton({ ideaId, ideaTitle }: ShareButtonProps) {
     <div className="relative">
       <button
         onClick={() => setShowMenu(!showMenu)}
-        className="font-retro text-xl px-4 py-2 bg-retro-teal text-retro-dark border-4 border-retro-dark shadow-retro hover:translate-x-1 hover:-translate-y-1 hover:shadow-retro-lg transition-all"
+        className="font-retro text-xl px-4 py-2 bg-retro-teal dark:bg-retro-green text-retro-dark border-4 border-retro-dark dark:border-retro-green shadow-retro hover:translate-x-1 hover:-translate-y-1 hover:shadow-retro-lg transition-all"
       >
         📤 Share
       </button>
@@ -55,13 +55,13 @@ export function ShareButton({ ideaId, ideaTitle }: ShareButtonProps) {
             className="fixed inset-0 z-10"
             onClick={() => setShowMenu(false)}
           />
-          <div className="absolute left-0 top-full mt-2 z-20 bg-white border-4 border-retro-dark shadow-retro-lg p-2 min-w-[200px]">
+          <div className="absolute left-0 top-full mt-2 z-20 bg-white dark:bg-retro-dark border-4 border-retro-dark dark:border-retro-green shadow-retro-lg p-2 min-w-[200px]">
             <button
               onClick={() => {
                 handleCopy()
                 setShowMenu(false)
               }}
-              className="w-full text-left font-retro text-xl px-3 py-2 hover:bg-retro-cream transition-colors flex items-center gap-2"
+              className="w-full text-left font-retro text-xl px-3 py-2 text-retro-dark dark:text-retro-green hover:bg-retro-cream dark:hover:bg-retro-navy transition-colors flex items-center gap-2"
             >
               {copied ? '✓ Copied!' : '📋 Copy Link'}
             </button>
@@ -70,7 +70,7 @@ export function ShareButton({ ideaId, ideaTitle }: ShareButtonProps) {
                 handleTwitterShare()
                 setShowMenu(false)
               }}
-              className="w-full text-left font-retro text-xl px-3 py-2 hover:bg-retro-cream transition-colors flex items-center gap-2"
+              className="w-full text-left font-retro text-xl px-3 py-2 text-retro-dark dark:text-retro-green hover:bg-retro-cream dark:hover:bg-retro-navy transition-colors flex items-center gap-2"
             >
               𝕏 Share on X
             </button>
@@ -79,7 +79,7 @@ export function ShareButton({ ideaId, ideaTitle }: ShareButtonProps) {
                 handleLinkedInShare()
                 setShowMenu(false)
               }}
-              className="w-full text-left font-retro text-xl px-3 py-2 hover:bg-retro-cream transition-colors flex items-center gap-2"
+              className="w-full text-left font-retro text-xl px-3 py-2 text-retro-dark dark:text-retro-green hover:bg-retro-cream dark:hover:bg-retro-navy transition-colors flex items-center gap-2"
             >
               💼 LinkedIn
             </button>

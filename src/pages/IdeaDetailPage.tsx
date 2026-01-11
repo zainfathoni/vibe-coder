@@ -12,9 +12,9 @@ export function IdeaDetailPage() {
 
   if (!idea) {
     return (
-      <div className="text-center py-12 border-4 border-retro-dark bg-white shadow-retro">
-        <p className="font-retro text-2xl text-retro-navy mb-4">Idea not found</p>
-        <Link to="/" className="font-pixel text-xs text-retro-purple hover:text-retro-pink underline">
+      <div className="text-center py-12 border-4 border-retro-dark dark:border-retro-green bg-white dark:bg-retro-dark shadow-retro">
+        <p className="font-retro text-2xl text-retro-navy dark:text-retro-green mb-4">Idea not found</p>
+        <Link to="/" className="font-pixel text-xs text-retro-purple dark:text-retro-green hover:text-retro-pink dark:hover:text-retro-yellow underline">
           Go back home
         </Link>
       </div>
@@ -28,43 +28,43 @@ export function IdeaDetailPage() {
       <div className="mb-6">
         <button
           onClick={() => navigate(-1)}
-          className="font-retro text-xl text-retro-purple hover:text-retro-pink transition-colors"
+          className="font-retro text-xl text-retro-purple dark:text-retro-green hover:text-retro-pink dark:hover:text-retro-yellow transition-colors"
         >
           ← Back
         </button>
       </div>
 
-      <div className="border-4 border-retro-dark bg-white p-6 shadow-retro-lg">
-        <h1 className="font-pixel text-lg text-retro-dark mb-4 leading-relaxed drop-shadow-[2px_2px_0px_rgba(155,93,229,0.5)]">
+      <div className="border-4 border-retro-dark dark:border-retro-green bg-white dark:bg-retro-dark p-6 shadow-retro-lg">
+        <h1 className="font-pixel text-lg text-retro-dark dark:text-retro-green mb-4 leading-relaxed drop-shadow-[2px_2px_0px_rgba(155,93,229,0.5)] dark:drop-shadow-[2px_2px_0px_rgba(112,224,0,0.5)]">
           {idea.title}
         </h1>
 
-        <p className="font-retro text-2xl text-retro-navy mb-6">{idea.fullDescription}</p>
+        <p className="font-retro text-2xl text-retro-navy dark:text-retro-green/80 mb-6">{idea.fullDescription}</p>
 
-        <div className="border-t-4 border-retro-dark pt-4 mb-6 space-y-3">
+        <div className="border-t-4 border-retro-dark dark:border-retro-green pt-4 mb-6 space-y-3">
           <div className="flex gap-2 items-center">
-            <span className="font-retro text-xl text-retro-navy w-36">⏱ Time Estimate</span>
-            <span className="font-retro text-xl bg-retro-teal text-retro-dark px-2 py-0.5 border-2 border-retro-dark">
+            <span className="font-retro text-xl text-retro-navy dark:text-retro-green w-36">⏱ Time Estimate</span>
+            <span className="font-retro text-xl bg-retro-teal dark:bg-retro-green/20 text-retro-dark dark:text-retro-green px-2 py-0.5 border-2 border-retro-dark dark:border-retro-green">
               {idea.timeEstimate}
             </span>
           </div>
           <div className="flex gap-2 items-center">
-            <span className="font-retro text-xl text-retro-navy w-36">📊 Difficulty</span>
-            <span className="font-retro text-xl bg-retro-yellow text-retro-dark px-2 py-0.5 border-2 border-retro-dark capitalize">
+            <span className="font-retro text-xl text-retro-navy dark:text-retro-green w-36">📊 Difficulty</span>
+            <span className="font-retro text-xl bg-retro-yellow dark:bg-retro-green/20 text-retro-dark dark:text-retro-green px-2 py-0.5 border-2 border-retro-dark dark:border-retro-green capitalize">
               {idea.difficulty}
             </span>
           </div>
           <div className="flex gap-2 items-center">
-            <span className="font-retro text-xl text-retro-navy w-36">🛠 Stack</span>
-            <span className="font-retro text-xl bg-retro-purple text-white px-2 py-0.5 border-2 border-retro-dark">
+            <span className="font-retro text-xl text-retro-navy dark:text-retro-green w-36">🛠 Stack</span>
+            <span className="font-retro text-xl bg-retro-purple dark:bg-retro-green/20 text-white dark:text-retro-green px-2 py-0.5 border-2 border-retro-dark dark:border-retro-green">
               {idea.stack.join(', ')}
             </span>
           </div>
         </div>
 
-        <div className="border-t-4 border-retro-dark pt-4 mb-6">
-          <h2 className="font-pixel text-xs text-retro-dark mb-3">Features to Build</h2>
-          <ul className="font-retro text-xl text-retro-navy space-y-2">
+        <div className="border-t-4 border-retro-dark dark:border-retro-green pt-4 mb-6">
+          <h2 className="font-pixel text-xs text-retro-dark dark:text-retro-green mb-3">Features to Build</h2>
+          <ul className="font-retro text-xl text-retro-navy dark:text-retro-green/80 space-y-2">
             {idea.features.map((feature, i) => (
               <li key={i} className="flex items-start gap-2">
                 <span className="text-retro-green">▸</span>
@@ -74,12 +74,12 @@ export function IdeaDetailPage() {
           </ul>
         </div>
 
-        <div className="border-t-4 border-retro-dark pt-4 mb-6">
-          <h2 className="font-pixel text-xs text-retro-dark mb-3">Learning Goals</h2>
-          <ul className="font-retro text-xl text-retro-navy space-y-2">
+        <div className="border-t-4 border-retro-dark dark:border-retro-green pt-4 mb-6">
+          <h2 className="font-pixel text-xs text-retro-dark dark:text-retro-green mb-3">Learning Goals</h2>
+          <ul className="font-retro text-xl text-retro-navy dark:text-retro-green/80 space-y-2">
             {idea.learningGoals.map((goal, i) => (
               <li key={i} className="flex items-start gap-2">
-                <span className="text-retro-orange">★</span>
+                <span className="text-retro-orange dark:text-retro-green">★</span>
                 {goal}
               </li>
             ))}
@@ -87,18 +87,18 @@ export function IdeaDetailPage() {
         </div>
 
         {idea.wireframes && idea.wireframes.length > 0 && (
-          <div className="border-t-4 border-retro-dark pt-4 mb-6">
-            <h2 className="font-pixel text-xs text-retro-dark mb-4">Wireframes</h2>
+          <div className="border-t-4 border-retro-dark dark:border-retro-green pt-4 mb-6">
+            <h2 className="font-pixel text-xs text-retro-dark dark:text-retro-green mb-4">Wireframes</h2>
             <div className="space-y-6">
               {idea.wireframes.map((wireframe, i) => (
-                <div key={i} className="bg-retro-navy border-4 border-retro-dark p-4 shadow-retro">
-                  <h3 className="font-pixel text-xs text-retro-yellow mb-2">
+                <div key={i} className="bg-retro-navy dark:bg-black border-4 border-retro-dark dark:border-retro-green p-4 shadow-retro">
+                  <h3 className="font-pixel text-xs text-retro-yellow dark:text-retro-green mb-2">
                     {wireframe.name}
                   </h3>
-                  <p className="font-retro text-lg text-retro-cream mb-3">
+                  <p className="font-retro text-lg text-retro-cream dark:text-retro-green/70 mb-3">
                     {wireframe.description}
                   </p>
-                  <pre className="bg-retro-dark text-retro-green p-4 border-4 border-retro-green overflow-x-auto text-xs font-mono leading-tight">
+                  <pre className="bg-retro-dark dark:bg-black text-retro-green p-4 border-4 border-retro-green overflow-x-auto text-xs font-mono leading-tight">
                     {wireframe.ascii}
                   </pre>
                 </div>
@@ -107,13 +107,13 @@ export function IdeaDetailPage() {
           </div>
         )}
 
-        <div className="border-t-4 border-retro-dark pt-4 flex gap-3 flex-wrap">
+        <div className="border-t-4 border-retro-dark dark:border-retro-green pt-4 flex gap-3 flex-wrap">
           <button
             onClick={() => toggle(idea.id)}
-            className={`font-retro text-xl px-4 py-2 border-4 border-retro-dark shadow-retro hover:translate-x-1 hover:-translate-y-1 hover:shadow-retro-lg transition-all ${
+            className={`font-retro text-xl px-4 py-2 border-4 border-retro-dark dark:border-retro-green shadow-retro hover:translate-x-1 hover:-translate-y-1 hover:shadow-retro-lg transition-all ${
               saved
-                ? 'bg-retro-pink text-white'
-                : 'bg-white text-retro-dark hover:bg-retro-cream'
+                ? 'bg-retro-pink dark:bg-retro-green text-white dark:text-retro-dark'
+                : 'bg-white dark:bg-retro-dark text-retro-dark dark:text-retro-green hover:bg-retro-cream dark:hover:bg-retro-navy'
             }`}
           >
             {saved ? '♥ Saved' : '♡ Save Idea'}
@@ -121,7 +121,7 @@ export function IdeaDetailPage() {
           <ShareButton ideaId={idea.id} ideaTitle={idea.title} />
           <button
             onClick={() => navigate(-1)}
-            className="font-retro text-xl px-4 py-2 bg-retro-purple text-white border-4 border-retro-dark shadow-retro hover:translate-x-1 hover:-translate-y-1 hover:shadow-retro-lg transition-all"
+            className="font-retro text-xl px-4 py-2 bg-retro-purple dark:bg-retro-green text-white dark:text-retro-dark border-4 border-retro-dark dark:border-retro-green shadow-retro hover:translate-x-1 hover:-translate-y-1 hover:shadow-retro-lg transition-all"
           >
             ← Back to List
           </button>

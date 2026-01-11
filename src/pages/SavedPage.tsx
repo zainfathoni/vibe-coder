@@ -13,14 +13,14 @@ export function SavedPage() {
   return (
     <div>
       <div className="mb-6">
-        <Link to="/" className="font-retro text-xl text-retro-purple hover:text-retro-pink transition-colors">
+        <Link to="/" className="font-retro text-xl text-retro-purple dark:text-retro-green hover:text-retro-pink dark:hover:text-retro-yellow transition-colors">
           ← Back
         </Link>
       </div>
 
-      <h1 className="font-pixel text-lg text-retro-dark text-center mb-6 drop-shadow-[2px_2px_0px_rgba(155,93,229,0.5)]">
+      <h1 className="font-pixel text-lg text-retro-dark dark:text-retro-green text-center mb-6 drop-shadow-[2px_2px_0px_rgba(155,93,229,0.5)] dark:drop-shadow-[2px_2px_0px_rgba(112,224,0,0.5)]">
         Saved Ideas
-        <span className="ml-2 bg-retro-pink text-white px-2 py-0.5 border-2 border-retro-dark text-xs">
+        <span className="ml-2 bg-retro-pink dark:bg-retro-green text-white dark:text-retro-dark px-2 py-0.5 border-2 border-retro-dark dark:border-retro-green text-xs">
           {savedIdeas.length}
         </span>
       </h1>
@@ -32,11 +32,11 @@ export function SavedPage() {
           ))}
         </div>
       ) : (
-        <div className="text-center py-12 border-4 border-retro-dark bg-white shadow-retro">
-          <p className="font-retro text-2xl text-retro-navy mb-4">No saved ideas yet</p>
+        <div className="text-center py-12 border-4 border-retro-dark dark:border-retro-green bg-white dark:bg-retro-dark shadow-retro">
+          <p className="font-retro text-2xl text-retro-navy dark:text-retro-green mb-4">No saved ideas yet</p>
           <Link
             to="/"
-            className="font-pixel text-xs text-retro-purple hover:text-retro-pink underline"
+            className="font-pixel text-xs text-retro-purple dark:text-retro-green hover:text-retro-pink dark:hover:text-retro-yellow underline"
           >
             Browse ideas
           </Link>
