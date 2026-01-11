@@ -1010,3 +1010,47 @@ export function shuffleIdeas(ideasList: Idea[]): Idea[] {
   }
   return shuffled
 }
+
+export function getAllStacks(): string[] {
+  const stacks = new Set<string>()
+  ideas.forEach((idea) => {
+    idea.stack.forEach((s) => stacks.add(s))
+  })
+  return Array.from(stacks).sort()
+}
+
+export function getAllTimeEstimates(): string[] {
+  const times = new Set<string>()
+  ideas.forEach((idea) => times.add(idea.timeEstimate))
+  return Array.from(times).sort((a, b) => {
+    const getMinHours = (t: string) => {
+      const match = t.match(/(\d+)/)
+      const num = match ? parseInt(match[1]) : 0
+      return t.includes('min') ? num / 60 : num
+    }
+    return getMinHours(a) - getMinHours(b)
+  })
+}
+
+export function filterIdeas(
+  ideasList: Idea[],
+  options: { search?: string; stack?: string; timeEstimate?: string }
+): Idea[] {
+  return ideasList.filter((idea) => {
+    if (options.search) {
+      const q = options.search.toLowerCase()
+      const matches =
+        idea.title.toLowerCase().includes(q) ||
+        idea.shortDescription.toLowerCase().includes(q) ||
+        idea.stack.some((s) => s.toLowerCase().includes(q))
+      if (!matches) return false
+    }
+    if (options.stack && !idea.stack.includes(options.stack)) {
+      return false
+    }
+    if (options.timeEstimate && idea.timeEstimate !== options.timeEstimate) {
+      return false
+    }
+    return true
+  })
+}
